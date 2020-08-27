@@ -13,6 +13,9 @@ int squareSolver(double a, double b, double c, double* x1, double* x2);
 
 int main()
     {
+    printf ("# Square equation solver\n")
+    printf("# Enter a, b, c")
+    
     double a = 0, b = 0, c = 0;
     scanf("%lg %lg %lg", &a, &b, &c);
 
