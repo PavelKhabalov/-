@@ -1,21 +1,54 @@
+/*!
+\file
+\brief   Solver of quadratic equation.
+\authors Pavel Khabalov
+\date    28.08.2020
+*/
+
+
+
 # include <stdio.h>
 # include <math.h>
 # include <assert.h>
 
 
-const int INF_NUM_ROOTS = -1;
+const int INF_NUM_ROOTS = -1;///< This constant stores the designation of an infinite number of roots
 
+
+const double MIN_DIFF = 1e-19;///< This constant defines the minimum difference at which the numbers are not equal
+
+/*!
+ Checks if numbers are approximately equal
+\param a, b Compared numbers
+\return True if numbers are equal and False if not
+*/
 bool equal_nums(double a, double b);
 
+
+/*!
+ Solve a linear equation
+\param a, b Coefficients of equation a*x + b == 0
+\param x Address of variable in which the root value will be put
+\return Number of roots
+*/
 int linearSolver(double a, double b, double* x);
 
+
+/*!
+ Solve a quadratic equation
+\param a, b, c Coefficients of equation a*x**2 + b*x + c == 0
+\param x1, x2 Addresses of variables in which the roots value will be put
+\return Number of roots
+*/
 int squareSolver(double a, double b, double c, double* x1, double* x2);
 
+
+
+/*!
+ Main function that output the answer
+*/
 int main()
     {
-    printf ("# Square equation solver\n");
-    printf("# Enter a, b, c\n");
-    
     double a = 0, b = 0, c = 0;
     scanf("%lg %lg %lg", &a, &b, &c);
 
@@ -101,7 +134,6 @@ int linearSolver(double a, double b, double* x)
 
 bool equal_nums(double a, double b)
     {
-    double min_diff = 1e-19;
-    return (((a - b) > -min_diff) & ((a - b) < min_diff));
+    return (((a - b) > -MIN_DIFF) & ((a - b) < MIN_DIFF));
     }
 
