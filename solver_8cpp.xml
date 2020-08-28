@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_solver_8cpp" xml:lang="en-US">
+<title>solver.cpp File Reference</title>
+<indexterm><primary>solver.cpp</primary></indexterm>
+<para>
+
+<para>Solver of quadratic equation. </para>
+ 
+</para>
+<programlisting>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;assert.h&gt;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_solver_8cpp_1a8bcee7d254d74d9b89cce7de9ff0b09a">equal_nums</link> (double a, double b)</para>
+</listitem>
+            <listitem><para>int <link linkend="_solver_8cpp_1abbd36bfee5ae3b9e9144c6c5ee068c87">linearSolver</link> (double a, double b, double *x)</para>
+</listitem>
+            <listitem><para>int <link linkend="_solver_8cpp_1a0212f420b1b374b839d1025216df20ad">squareSolver</link> (double a, double b, double c, double *x1, double *x2)</para>
+</listitem>
+            <listitem><para>int <link linkend="_solver_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>const int <link linkend="_solver_8cpp_1a21c5c758e3ba7b0acb0d3f42b28d1b2d">INF_NUM_ROOTS</link> = -1</para>
+
+<para>This constant stores the designation of an infinite number of roots. </para>
+</listitem>
+            <listitem><para>const double <link linkend="_solver_8cpp_1a8a5e4938cffe9111b3c9dbc1068fa933">MIN_DIFF</link> = 1e-19</para>
+
+<para>This constant defines the minimum difference at which the numbers are not equal. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Solver of quadratic equation. </para>
+
+<para><formalpara><title>Authors</title>
+
+<para>Pavel Khabalov </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>28.08.2020 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_solver_8cpp_1a8bcee7d254d74d9b89cce7de9ff0b09a"/>    <section>
+    <title>equal_nums()</title>
+<indexterm><primary>equal_nums</primary><secondary>solver.cpp</secondary></indexterm>
+<indexterm><primary>solver.cpp</primary><secondary>equal_nums</secondary></indexterm>
+<para><computeroutput>bool equal_nums (double a, double b)</computeroutput></para>
+<para>Checks if numbers are approximately equal 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a, b</entry>
+                                <entry>
+<para>Compared numbers </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if numbers are equal and False if not </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_solver_8cpp_1abbd36bfee5ae3b9e9144c6c5ee068c87"/>    <section>
+    <title>linearSolver()</title>
+<indexterm><primary>linearSolver</primary><secondary>solver.cpp</secondary></indexterm>
+<indexterm><primary>solver.cpp</primary><secondary>linearSolver</secondary></indexterm>
+<para><computeroutput>int linearSolver (double a, double b, double * x)</computeroutput></para>
+<para>Solve a linear equation 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a, b</entry>
+                                <entry>
+<para>Coefficients of equation a*x + b == 0 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>Address of variable in which the root value will be put </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Number of roots </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_solver_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>solver.cpp</secondary></indexterm>
+<indexterm><primary>solver.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para>
+<para>Main function that output the answer </para>
+    </section><anchor xml:id="_solver_8cpp_1a0212f420b1b374b839d1025216df20ad"/>    <section>
+    <title>squareSolver()</title>
+<indexterm><primary>squareSolver</primary><secondary>solver.cpp</secondary></indexterm>
+<indexterm><primary>solver.cpp</primary><secondary>squareSolver</secondary></indexterm>
+<para><computeroutput>int squareSolver (double a, double b, double c, double * x1, double * x2)</computeroutput></para>
+<para>Solve a quadratic equation 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a, b, c</entry>
+                                <entry>
+<para>Coefficients of equation a*x**2 + b*x + c == 0 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x1, x2</entry>
+                                <entry>
+<para>Addresses of variables in which the roots value will be put </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Number of roots </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_solver_8cpp_1a21c5c758e3ba7b0acb0d3f42b28d1b2d"/>    <section>
+    <title>INF_NUM_ROOTS</title>
+<indexterm><primary>INF_NUM_ROOTS</primary><secondary>solver.cpp</secondary></indexterm>
+<indexterm><primary>solver.cpp</primary><secondary>INF_NUM_ROOTS</secondary></indexterm>
+<para><computeroutput>const int INF_NUM_ROOTS = -1</computeroutput></para><para>
+
+<para>This constant stores the designation of an infinite number of roots. </para>
+</para>
+    </section><anchor xml:id="_solver_8cpp_1a8a5e4938cffe9111b3c9dbc1068fa933"/>    <section>
+    <title>MIN_DIFF</title>
+<indexterm><primary>MIN_DIFF</primary><secondary>solver.cpp</secondary></indexterm>
+<indexterm><primary>solver.cpp</primary><secondary>MIN_DIFF</secondary></indexterm>
+<para><computeroutput>const double MIN_DIFF = 1e-19</computeroutput></para><para>
+
+<para>This constant defines the minimum difference at which the numbers are not equal. </para>
+</para>
+</section>
+</section>
+</section>
